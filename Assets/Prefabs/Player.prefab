@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 488267803610601863}
   - component: {fileID: 8425407194375278093}
   - component: {fileID: 3409383329481048095}
+  - component: {fileID: 4544651239649457342}
+  - component: {fileID: 1884543998527354708}
+  - component: {fileID: 1923303153114273835}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -342,3 +345,93 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4544651239649457342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131249384106725070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d0a5a9aa024f540a566e1433a7124e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 10
+  minHealth: 0
+  invincible: 0
+  safeTime: 1
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExitSafeTime:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1884543998527354708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131249384106725070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f21cad32bb524d48aa1d61647fdbc1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnityEventOnTrigger
+  tagToActivate: Hazard
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4544651239649457342}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1923303153114273835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131249384106725070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f21cad32bb524d48aa1d61647fdbc1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UnityEventOnTrigger
+  tagToActivate: Enemy
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4544651239649457342}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
